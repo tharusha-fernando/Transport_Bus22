@@ -3,14 +3,17 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Laratrust\Traits\HasRolesAndPermissions;
+use Laratrust\Contracts\LaratrustUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements LaratrustUser
 {
     use HasApiTokens, HasFactory, Notifiable;
+    use HasRolesAndPermissions;
 
     /**
      * The attributes that are mass assignable.
@@ -42,4 +45,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    public function Booking(){
+        return $this->hasOne(Booking::class);
+    }
+
+    public function Complaint(){
+        return $this->belongsTo(Booking::class);
+    }
 }
