@@ -12,12 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('drivers', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('name');
             $table->string('nic');
             $table->integer('age');
             $table->date('dob')->nullable();
             $table->string('reg_number');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('complaints', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained();
+            $table->uuid('id')->primary();
+            $table->foreignUuid('user_id')->constrained();
             $table->string('details');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

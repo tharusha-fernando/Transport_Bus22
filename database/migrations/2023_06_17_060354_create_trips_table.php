@@ -12,19 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('trips', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('timetable_id')->constrained();
-            $table->foreignId('bus_id')->constrained();
+            $table->uuid('id')->primary();
+            $table->foreignUuid('time_table_id')->constrained();
+            $table->foreignUuid('bus_id')->constrained();
             $table->string('type');
             $table->string('details')->nullable();
-            $table->foreignId('location_id')->nullable()->constrained();
+            $table->foreignUuid('location_id')->nullable()->constrained();
             $table->time('start');
             $table->time('end');
-            $table->foreignId('route_id')->constrained();
+            $table->foreignUuid('route_id')->constrained();
             $table->float('distance');
-            $table->string('status')->default('pending');
-            $table->foreignId('from')->constrained('stations');
-            $table->foreignId('to')->constrained('stations');
+            $table->string('status')->default('scheduled');
+            $table->foreignUuid('from')->constrained('bus_stations');
+            $table->foreignUuid('to')->constrained('bus_stations');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

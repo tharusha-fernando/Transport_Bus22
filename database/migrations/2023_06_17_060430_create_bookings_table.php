@@ -12,10 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bookings', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('trip_id')->constrained();
-            $table->foreignId('user_id')->constrained();
+            $table->uuid('id')->primary();
+            $table->foreignUuid('trip_id')->constrained();
+            $table->foreignUuid('user_id')->constrained();
             $table->string('details');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

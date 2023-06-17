@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bus_station_driver', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('driver_id')->constrained();
-            $table->foreignId('bus_station_id')->constrained();
+            $table->uuid('id')->primary();
+            $table->foreignUuid('driver_id')->constrained();
+            $table->foreignUuid('bus_station_id')->constrained();
             $table->timestamps();
         });
     }

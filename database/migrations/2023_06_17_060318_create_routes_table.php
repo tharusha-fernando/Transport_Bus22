@@ -12,13 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('routes', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('number');
             $table->string('name');
             $table->string('from');
             $table->string('to');
             $table->float('distance');
             $table->integer('time');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

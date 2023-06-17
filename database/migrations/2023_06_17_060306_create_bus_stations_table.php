@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bus_stations', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('name');
             $table->string('address');
+            $table->string('slug')->unique();
             $table->decimal('latitude', 10, 8);
             $table->decimal('longitude', 11, 8);
             $table->timestamps();

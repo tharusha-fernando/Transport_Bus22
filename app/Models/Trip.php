@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Trip extends Model
 {
-    use HasFactory;
+    use HasFactory,HasUuids;
 
     protected $fillable=['timetable_id','bus_id','type','details',
     'location_id','start','end','route_id',

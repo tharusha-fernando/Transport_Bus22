@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('time_tables', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('name');
             $table->string('description')->nullable();
-            $table->foreignId('bus_station_id')->constrained();
+            $table->foreignUuid('bus_station_id')->constrained();
             $table->timestamps();
         });
     }
