@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -10,7 +11,21 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class BusStation extends Model
 {
     use HasFactory,HasUuids;
-    protected $fillable=['name','address','latitude','longitude'];
+    use Sluggable;
+    protected $fillable=['name','address','latitude','longitude','user_id'];
+
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
+
+
+
 
     public function Bus(){
         return $this->BelongsToMany(Bus::class,'bus_bus_station','bus_station_id','bus_id');
@@ -23,6 +38,10 @@ class BusStation extends Model
 
     public function Driver(){
         return $this->belongsToMany(Driver::class,'bus_station_driver','bus_station_id','driver_id');
+    }
+
+    public function User(){
+        return $this->belongsTo(User::class);
     }
 
 

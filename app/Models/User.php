@@ -56,4 +56,12 @@ class User extends Authenticatable implements LaratrustUser
     public function Complaint(){
         return $this->belongsTo(Booking::class);
     }
+
+    public function BusStation(){
+        return $this->hasOne(BusStation::class);
+    }
+
+    public function Driver(){
+        return $this->hasOne(Driver::class);
+    }
 }

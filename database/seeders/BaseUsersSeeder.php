@@ -41,6 +41,20 @@ class BaseUsersSeeder extends Seeder
             'password' => Hash::make('12345678'),
         ]);
         $user->addRole('administrator'); 
+
+        $user=User::create([
+            'name' => 'Bus-Station',
+            'email' => 'busstation@gmail.com',
+            'password' => Hash::make('12345678'),
+        ]);
+        $user->addRole('station_operator'); 
+
+        $user=User::create([
+            'name' => 'Bus-Station22',
+            'email' => 'busstation22@gmail.com',
+            'password' => Hash::make('12345678'),
+        ]);
+        $user->addRole('station_operator'); 
         //
     }
 }

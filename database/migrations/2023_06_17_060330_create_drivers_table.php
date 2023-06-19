@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('dob')->nullable();
             $table->string('reg_number');
             $table->string('slug')->unique();
+            $table->foreignUuid('user_id')->constrained();
             $table->timestamps();
         });
     }

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->decimal('latitude', 10, 8);
             $table->decimal('longitude', 11, 8);
+            $table->foreignUuid('user_id')->constrained();
             $table->timestamps();
         });
     }
