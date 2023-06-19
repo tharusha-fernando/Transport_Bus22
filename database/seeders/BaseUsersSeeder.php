@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\BusStation;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -47,12 +48,26 @@ class BaseUsersSeeder extends Seeder
             'email' => 'busstation@gmail.com',
             'password' => Hash::make('12345678'),
         ]);
+        $bus_station=BusStation::create([
+            'name' => 'Bus-Station',
+            'address' => 'Bus-Station',
+            'latitude' => 40.7128,
+            'longitude' => -74.0060,
+            'user_id' => $user->id
+        ]);
         $user->addRole('station_operator'); 
 
         $user=User::create([
             'name' => 'Bus-Station22',
             'email' => 'busstation22@gmail.com',
             'password' => Hash::make('12345678'),
+        ]);
+        $bus_station=BusStation::create([
+            'name' => 'Bus-Station22',
+            'address' => 'Bus-Station22',
+            'latitude' => 40.7128,
+            'longitude' => -74.0060,
+            'user_id' => $user->id
         ]);
         $user->addRole('station_operator'); 
         //

@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('route_station', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id();
             $table->foreignUuid('route_id')->constrained();
             $table->foreignUuid('bus_station_id')->constrained();
             $table->timestamps();

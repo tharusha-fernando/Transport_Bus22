@@ -15,7 +15,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->string('nic');
-            $table->integer('age');
+            $table->integer('age__')->nullable();
             $table->date('dob')->nullable();
             $table->string('reg_number');
             $table->string('slug')->unique();

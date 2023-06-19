@@ -4,15 +4,18 @@ namespace App\Http\Controllers\Api\V1\StationOperator;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateDriverstRequest;
+use App\Http\Requests\GetDriversRequest;
+use App\Models\BusStation;
 use App\Models\Driver;
 use App\Models\User;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class DriverController extends Controller
 {
-    
+
 
     public function Create_driver_st_user(CreateDriverstRequest $request)
     {
@@ -28,17 +31,20 @@ class DriverController extends Controller
                 ]);
                 $token = $user->createToken('main')->plainTextToken;
 
-                $bus_station = Driver::create([
-                    'name' => $data['name_of_station'],
-                    'address' => $data['address'],
-                    'latitude' => $data['latitude'],
-                    'longitude' => $data['longitude'],
+                $driver = Driver::create([
+                    'name' => $data['name_of_driver'],
+                    'nic' => $data['nic'],
+                    'age' => $data['age'],
+                    'dob' => $data['dob'],
+                    'reg_number' => $data['reg_number'],
                     'user_id' => $user->id
                 ]);
+                $bussstation = BusStation::where('user_id', Auth::id())->get()->first();
+                $driver->BusStation()->attach($bussstation->id);
                 return [
                     'user' => $user,
                     'token' => $token,
-                    'bus_station' => $bus_station
+                    'driver' => $driver
                 ];
             });
             return response($response);
@@ -55,8 +61,26 @@ class DriverController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(GetDriversRequest $request)
     {
+        $user = $request->user();
+        $drivers = Driver::whereHas('BusStation.User', function ($query) use ($user) {
+            $query->where('id', $user->id);
+        })
+        ->when($request->search && $request->search_by, function ($query) use ($request) {
+            if ($request->search_by === 'nic') {
+                $query->where('nic', 'like', '%' . $request->search . '%');
+            } elseif ($request->search_by === 'name') {
+                $query->where('name', 'like', '%' . $request->search . '%');
+            }
+        })
+        ->when($request->order_by,function($query)use($request){
+            $query->orderBy('created_at',$request->order_by);
+        })
+            ->paginate();
+
+        return $drivers;
+
         //
     }
 

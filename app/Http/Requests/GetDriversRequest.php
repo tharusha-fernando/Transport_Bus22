@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class CreateDriverstRequest extends FormRequest
+class GetDriversRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,18 +23,18 @@ class CreateDriverstRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string',
-            'email' => 'required|email|string|unique:users,email',
-            'password' => [
-                'required',
-                'confirmed'
-            ],
-            'name_of_driver' => 'required|string',
-            'nic' => 'required|numeric|unique:drivers,nic',
-            'age' => 'sometimes',
-            'dob' => 'required|date',
-            'reg_number' => 'required|numeric',
+            'search'=>'nullable|string',
+            'search_by'=>Rule::in(['nic','name']),
+            'order_by'=>Rule::in(['asc','desc'])
             //
+        ];
+    }
+
+    public function messages()
+    {
+        return[  
+        'search_by'=>'search by only can be nic or name',
+        'order_by'=>'order by only can be asc or desc'
         ];
     }
 }

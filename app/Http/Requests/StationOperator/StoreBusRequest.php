@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\StationOperator;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateDriverstRequest extends FormRequest
+class StoreBusRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,17 +22,11 @@ class CreateDriverstRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string',
-            'email' => 'required|email|string|unique:users,email',
-            'password' => [
-                'required',
-                'confirmed'
-            ],
-            'name_of_driver' => 'required|string',
-            'nic' => 'required|numeric|unique:drivers,nic',
-            'age' => 'sometimes',
-            'dob' => 'required|date',
-            'reg_number' => 'required|numeric',
+            'license_plate'=>'required|unique:buses,license_plate',
+            'model'=>'required|string',
+            'capacity'=>'required|string',
+            'owner_name'=>'nullable|string',
+
             //
         ];
     }

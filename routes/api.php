@@ -1,7 +1,9 @@
 <?php
 
+//use App\Http\Controllers\Api\StationOperator\BusController;
 use App\Http\Controllers\Api\V1\Admin\UserController;
 use App\Http\Controllers\Api\V1\AuthController;
+use App\Http\Controllers\Api\V1\StationOperator\BusController;
 use App\Http\Controllers\Api\V1\StationOperator\DriverController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +36,8 @@ Route::prefix('v1')->group(function () {
 
     Route::prefix('bus-station')->middleware(['auth:sanctum','role:station_operator'])->group(function () {
         Route::post('create-driver-user-user',[DriverController::class,'Create_driver_st_user']);
+        Route::apiResource('drivers',DriverController::class);
+        Route::apiResource('buses',BusController::class);
     
     });
 
