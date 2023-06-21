@@ -22,7 +22,6 @@ class UpdateTripsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            
             'time_table_id'=>'required|exists:time_tables,id',
             'bus_id'=>'required|exists:buses,id',
             'type'=>'required|string',

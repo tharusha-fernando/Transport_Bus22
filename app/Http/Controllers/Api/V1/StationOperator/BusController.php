@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\V1\StationOperator;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StationOperator\AddDriverToTripRequest;
 use App\Http\Requests\StationOperator\GetBusRequest;
 use App\Http\Requests\StationOperator\StoreBusRequest;
 use App\Models\Bus;
@@ -97,5 +98,34 @@ class BusController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+
+    public function add_or_remove_driver_to_bus_here(AddDriverToTripRequest $request,Bus $bus){
+        //$data=$request->validated();
+        $data=$request->validated();
+
+        try {
+            $response = DB::transaction(function () use ($data,$bus) {
+                $bus->update($data);
+                
+                return [
+                    'bus' => $bus,
+                    'Message'=>'Driver Added'
+                ];
+            });
+            return response($response);
+        } catch (\Exception $ex) {
+            return response()->json(['General Exeption = ', $ex->getMessage()], 500);
+        } catch (\Error $er) {
+            return response()->json(['General Error = ', $er->getMessage()], 500);
+        } catch (QueryException $qr) {
+            return response()->json(['General Exeption = ', $qr->getMessage()], 500);
+        }
+
+        //$bus->update($data);
+        
+       // return $bus;
+       // return response('sdsdsdsdsd');
     }
 }

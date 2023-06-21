@@ -12,7 +12,7 @@ class Bus extends Model
 {
     use HasFactory,HasUuids;
     use Sluggable;
-    protected $fillable=['license_plate','model','capacity','owner_name','slug'];
+    protected $fillable=['license_plate','model','capacity','owner_name','slug','driver_id'];
 
     public function sluggable(): array
     {

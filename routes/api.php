@@ -3,6 +3,7 @@
 //use App\Http\Controllers\Api\StationOperator\BusController;
 use App\Http\Controllers\Api\V1\Admin\UserController;
 use App\Http\Controllers\Api\V1\AuthController;
+use App\Http\Controllers\Api\V1\Driver\TripsController;
 use App\Http\Controllers\Api\V1\RouteController;
 use App\Http\Controllers\Api\V1\StationOperator\BusController;
 use App\Http\Controllers\Api\V1\StationOperator\DriverController;
@@ -45,10 +46,13 @@ Route::prefix('v1')->group(function () {
         Route::apiResource('buses',BusController::class);
         Route::apiResource('trips',TripController::class);
         Route::apiResource('time-table',TimeTableController::class);
+        
+        Route::patch('buses-add-driver/{bus}',[BusController::class,'add_or_remove_driver_to_bus_here']);
     
     });
 
     Route::prefix('driver')->middleware(['auth:sanctum'])->group(function () {
+        Route::apiResource('trips',TripsController::class);
     });
     Route::prefix('reg-user')->middleware('auth:sanctum')->group(function () {
     });
