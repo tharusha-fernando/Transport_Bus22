@@ -3,14 +3,24 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Route extends Model
 {
     use HasFactory,HasUuids;
+    use Sluggable;
+    protected $fillable=['number','name','from','to','distance','time','slug'];
 
-    protected $fillable=['license_plate','model','capacity','owner_name'];
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'number'
+            ]
+        ];
+    }
 
     public function BusStation(){
         return $this->belongsToMany(BusStation::class,'route_station','route_id','bus_station_id');

@@ -3,8 +3,11 @@
 //use App\Http\Controllers\Api\StationOperator\BusController;
 use App\Http\Controllers\Api\V1\Admin\UserController;
 use App\Http\Controllers\Api\V1\AuthController;
+use App\Http\Controllers\Api\V1\RouteController;
 use App\Http\Controllers\Api\V1\StationOperator\BusController;
 use App\Http\Controllers\Api\V1\StationOperator\DriverController;
+use App\Http\Controllers\Api\V1\StationOperator\TimeTableController;
+use App\Http\Controllers\Api\V1\StationOperator\TripController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +30,8 @@ Route::prefix('v1')->group(function () {
 
     Route::post('login',[AuthController::class,'login']);
 
+    Route::apiResource('routes',RouteController::class);
+
     Route::prefix('super-admin')->middleware(['auth:sanctum','role:administrator'])->group(function () {
     
     });
@@ -38,6 +43,8 @@ Route::prefix('v1')->group(function () {
         Route::post('create-driver-user-user',[DriverController::class,'Create_driver_st_user']);
         Route::apiResource('drivers',DriverController::class);
         Route::apiResource('buses',BusController::class);
+        Route::apiResource('trips',TripController::class);
+        Route::apiResource('time-table',TimeTableController::class);
     
     });
 

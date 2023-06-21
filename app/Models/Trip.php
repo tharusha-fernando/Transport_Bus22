@@ -3,16 +3,27 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Trip extends Model
 {
     use HasFactory,HasUuids;
-
-    protected $fillable=['timetable_id','bus_id','type','details',
+    use Sluggable;
+    protected $fillable=['time_table_id','bus_id','type','details',
     'location_id','start','end','route_id',
     'distance','status','from','to'];
+
+    public function sluggable(): array
+    {
+        
+        return [
+            'slug' => [
+                'source' => ['start','created_at']
+            ]
+        ];
+    }
 
 
     public function TimeTable(){
@@ -33,5 +44,9 @@ class Trip extends Model
 
     public function To(){
         return $this->hasOne(BusStation::class,'to','id');
+    }
+
+    public function BusStation(){
+        return $this->belongsToMany(BusStation::class,'bus_station_trip','trip_id','bus_station_id');
     }
 }

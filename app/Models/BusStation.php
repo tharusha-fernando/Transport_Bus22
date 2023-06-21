@@ -46,6 +46,10 @@ class BusStation extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function Trip(){
+        return $this->belongsToMany(BusStation::class,'bus_station_trip','bus_station_id','trip_id');
+    }
+
 
     
     

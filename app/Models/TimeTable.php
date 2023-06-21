@@ -10,6 +10,8 @@ class TimeTable extends Model
 {
     use HasFactory,HasUuids;
 
+    protected $fillable=['name','description','bus_station_id'];
+
     public function BusStation(){
         return $this->belongsTo(BusStation::class);
     }
