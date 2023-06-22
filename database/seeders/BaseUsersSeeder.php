@@ -70,6 +70,8 @@ class BaseUsersSeeder extends Seeder
             'user_id' => $user->id
         ]);
         $user->addRole('station_operator'); 
+
+        
         //
     }
 }
