@@ -25,6 +25,7 @@ class UserController extends Controller
                     'password' => bcrypt($data['password'])
                 ]);
                 $token = $user->createToken('main')->plainTextToken;
+                $user->addRole('station_operator'); 
 
                 $bus_station = BusStation::create([
                     'name' => $data['name_of_station'],

@@ -31,7 +31,7 @@ class Trip extends Model
     }
 
     public function Bus(){
-        return $this->hasOne(Bus::class);
+        return $this->belongsTo(Bus::class);
     }
 
     public function Route(){

@@ -51,7 +51,7 @@ Route::prefix('v1')->group(function () {
     
     });
 
-    Route::prefix('driver')->middleware(['auth:sanctum'])->group(function () {
+    Route::prefix('driver')->middleware(['auth:sanctum','role:driver'])->group(function () {
         Route::apiResource('trips',TripsController::class);
     });
     Route::prefix('reg-user')->middleware('auth:sanctum')->group(function () {

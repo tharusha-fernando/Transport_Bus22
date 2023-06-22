@@ -48,6 +48,11 @@ class Driver extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function Bus()
+    {
+        return $this->hasOne(Bus::class);
+    }
+
     public function age():Attribute
     {
         return Attribute::make(

@@ -30,6 +30,7 @@ class DriverController extends Controller
                     'password' => bcrypt($data['password'])
                 ]);
                 $token = $user->createToken('main')->plainTextToken;
+                $user->addRole('driver'); 
 
                 $driver = Driver::create([
                     'name' => $data['name_of_driver'],

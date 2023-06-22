@@ -14,12 +14,14 @@ class TripsController extends Controller
      */
     public function index(GetTripsRequest $request)
     {
+       // return response('sassasasa');
+        $driver = $request->user()->Driver->id;
         $user = $request->user()->Driver;
-        $drivers = Trip::whereHas('Bus.Driver', function ($query) use ($user) {
-            $query->where('id', $user->id);
+        //return $user;
+        //return $user->BusStation;
+        $drivers = Trip::whereHas('Bus.Driver', function ($query) use ($driver) {
+            $query->where('id', $driver);
         })
-        ->orWhere('from',$user->BusStation->id)
-        ->orWhere('to',$user->BusStation->id)
         ->when($request->search && in_array('trip_id', $request->search_by), function ($query) use ($request) {
             $query->where('id', 'like', '%' . $request->search . '%');
         })

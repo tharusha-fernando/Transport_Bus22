@@ -31,4 +31,10 @@ class Bus extends Model
     public function Doc(){
         return $this->belongsToMany(Doc::class,'table_bus_doc','bus_id','doc_id');
     }
+
+    public function Driver(){
+        return $this->belongsTo(Driver::class);
+    }
+
+
 }
