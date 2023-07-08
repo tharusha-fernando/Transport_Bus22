@@ -9,4 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 class Location extends Model
 {
     use HasFactory,HasUuids;
+
+    protected $fillable=['latitude','longitude'];
+
+    public function Trip(){
+        return $this->hasOne(Trip::class);
+    }
 }

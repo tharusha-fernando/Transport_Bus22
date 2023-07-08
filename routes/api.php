@@ -54,6 +54,7 @@ Route::prefix('v1')->group(function () {
     Route::prefix('driver')->middleware(['auth:sanctum','role:driver'])->group(function () {
         Route::apiResource('trips',TripsController::class);
         Route::patch('trips-status/{trip}',[TripsController::class,'update_status_']);
+        Route::patch('trips-location/{trip}',[TripsController::class,'SetLocation']);
     });
     Route::prefix('reg-user')->middleware('auth:sanctum')->group(function () {
     });

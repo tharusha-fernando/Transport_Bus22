@@ -49,4 +49,8 @@ class Trip extends Model
     public function BusStation(){
         return $this->belongsToMany(BusStation::class,'bus_station_trip','trip_id','bus_station_id');
     }
+
+    public function Location(){
+        return $this->belongsTo(Location::class);
+    }
 }
