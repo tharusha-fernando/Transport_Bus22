@@ -32,7 +32,7 @@ To set up the project, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/tharusha-fernando/Transport_Bus_Capstone_Prohect.git
 
 3. Install project dependencies using Composer:
    ```bash
