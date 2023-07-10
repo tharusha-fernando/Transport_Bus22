@@ -32,4 +32,33 @@ To set up the project, follow these steps:
 
 1. Clone the repository:
 
+2. Install project dependencies using Composer:
+
+bash
+Copy code
+composer install
+Run database migrations:
+
+bash
+Copy code
+php artisan migrate
+Start the development server:
+
+bash
+Copy code
+php artisan serve
+The API will be accessible at http://localhost:8000.
+
+Postman Collection
+Inside the public/postman directory, you will find a Postman collection that contains pre-defined API requests. You can import this collection into Postman to easily test and interact with the API.
+
+css
+Copy code
+
+Copy the above content and save it as a markdown file (e.g., `readme.md`) in your GitHub repository.
+
+
+
+
+
 
