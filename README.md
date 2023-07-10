@@ -53,6 +53,7 @@ The API will be accessible at http://localhost:8000.
 
 Postman Collection
 Inside the public/postman directory, you will find a Postman collection that contains pre-defined API requests. You can import this collection into Postman to easily test and interact with the API.
+This projects currently uses Sanctum Authentication
 
 css
 Copy code
