@@ -48,15 +48,15 @@ class TripController extends Controller
         ->when($request->search_to && in_array('to', $request->search_by), function ($query) use ($request) {
             $query->where('to', 'like', '%' . $request->search_to . '%');
         })
-        
-        ->when($request->order_by,function($query)use($request){
-            $query->orderBy('created_at',$request->order_by);
-        })
-        ->when($request->day,function($query)use($request){
-            $query->orderBy('day',$request->day);
-        })
+        ->orderBy('start','ASC')
             ->paginate();
 
+            // ->when($request->order_by,function($query)use($request){
+            //     $query->orderBy('created_at',$request->order_by);
+            // })
+            // ->when($request->day,function($query)use($request){
+            //     $query->orderBy('day',$request->day);
+            // })
         return $drivers;
 
         //
