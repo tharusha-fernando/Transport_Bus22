@@ -64,4 +64,8 @@ class User extends Authenticatable implements LaratrustUser
     public function Driver(){
         return $this->hasOne(Driver::class);
     }
+
+    public function Thread(){
+        return $this->belongsToMany(Thread::class,'thread_user','user_id','thread_id');
+    }
 }

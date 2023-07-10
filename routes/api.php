@@ -4,11 +4,14 @@
 use App\Http\Controllers\Api\V1\Admin\UserController;
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\Driver\TripsController;
+use App\Http\Controllers\Api\V1\MessageController;
 use App\Http\Controllers\Api\V1\RouteController;
 use App\Http\Controllers\Api\V1\StationOperator\BusController;
 use App\Http\Controllers\Api\V1\StationOperator\DriverController;
 use App\Http\Controllers\Api\V1\StationOperator\TimeTableController;
 use App\Http\Controllers\Api\V1\StationOperator\TripController;
+use App\Http\Controllers\Api\V1\ThreadController;
+use App\Models\Thread;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +35,11 @@ Route::prefix('v1')->group(function () {
     Route::post('login',[AuthController::class,'login']);
 
     Route::apiResource('routes',RouteController::class);
+    Route::middleware(['auth:sanctum'])->group(function(){
+        Route::apiResource('Threads',ThreadController::class);
+        Route::post('Threads-create-show/{user}',[ThreadController::class,'create_show']);
+        Route::apiResource('messages',MessageController::class);
+    });
 
     Route::prefix('super-admin')->middleware(['auth:sanctum','role:administrator'])->group(function () {
     
