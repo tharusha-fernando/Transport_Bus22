@@ -34,18 +34,16 @@ To set up the project, follow these steps:
 
 2. Install project dependencies using Composer:
 
-bash
-Copy code
+
 composer install
 Run database migrations:
 
-bash
-Copy code
 php artisan migrate
+
+
 Start the development server:
 
-bash
-Copy code
+
 php artisan serve
 The API will be accessible at http://localhost:8000.
 
