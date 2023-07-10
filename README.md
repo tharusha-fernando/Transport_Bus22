@@ -31,22 +31,24 @@ The API provides the following features:
 To set up the project, follow these steps:
 
 1. Clone the repository:
-
-2. Install project dependencies using Composer:
-1. Clone the repository:
    ```bash
    git clone <repository-url>
 
-composer install
-Run database migrations:
-
-php artisan migrate
-
-
-Start the development server:
+3. Install project dependencies using Composer:
+   ```bash
+   composer install
 
 
-php artisan serve
+4. Run database migrations:
+   ```bash
+   php artisan migrate
+
+5. Start the development server:
+    ```bash
+   php artisan serve
+
+
+
 The API will be accessible at http://localhost:8000.
 
 Postman Collection
