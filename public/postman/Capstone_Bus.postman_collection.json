@@ -1,0 +1,1471 @@
+{
+	"info": {
+		"_postman_id": "398d7833-db4b-41d1-9755-244ffd17a7e8",
+		"name": "Capstone_Bus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25224915",
+		"_collection_link": "https://speeding-resonance-840606.postman.co/workspace/capstone_project~82038d80-d4db-4387-a65d-6f28515aa2c7/collection/25224915-398d7833-db4b-41d1-9755-244ffd17a7e8?action=share&creator=25224915&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/api/v1/login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "busstation@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "remember",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				},
+				"description": "General Login For Every User"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/admin/create-bus-station-user",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|eiuGcWdoLPMRPNxe43ch2fmd5XTZFKhKXyk4lmzU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "asasasasa",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "sdaaasasdsdsd@gmai.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "name_of_station",
+							"value": "dsfsfsfdsfds",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "adasdsasas",
+							"type": "text"
+						},
+						{
+							"key": "latitude",
+							"value": "40.7128",
+							"type": "text"
+						},
+						{
+							"key": "longitude",
+							"value": "-74.0060",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/admin/create-bus-station-user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"create-bus-station-user"
+					]
+				},
+				"description": "create bs station user account \r\nthis only accesible buy admins and superadminssuper"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/bus-station/create-driver-user-user",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9|CXml0Ee4raClMRhaMvX4ODERTsHYkFyTi1jgmJrF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "test driver22",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "newtestdriver22@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "name_of_driver",
+							"value": "hjgghasasasa",
+							"type": "text"
+						},
+						{
+							"key": "nic",
+							"value": "1252121121212199121212323",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "aasasa",
+							"type": "text"
+						},
+						{
+							"key": "dob",
+							"value": "1990-01-01",
+							"type": "text"
+						},
+						{
+							"key": "reg_number",
+							"value": "13211212",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/bus-station/create-driver-user-user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"bus-station",
+						"create-driver-user-user"
+					]
+				},
+				"description": "create driver account\r\nonly accessible by station operator"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/bus-station/drivers",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				},
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9|CXml0Ee4raClMRhaMvX4ODERTsHYkFyTi1jgmJrF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "search",
+							"value": "jkhkjjhsasasasaasasa",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/bus-station/drivers?search=&search_by=nic&order_by=asc",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"bus-station",
+						"drivers"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": ""
+						},
+						{
+							"key": "search_by",
+							"value": "nic"
+						},
+						{
+							"key": "order_by",
+							"value": "asc"
+						}
+					]
+				},
+				"description": "get drivers by station\r\nonly accessible by station operator"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/bus-station/buses",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9|CXml0Ee4raClMRhaMvX4ODERTsHYkFyTi1jgmJrF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "license_plate",
+							"value": "asassasassddsdssdssdsdsasa",
+							"type": "text"
+						},
+						{
+							"key": "model",
+							"value": "asasasaaaaasd",
+							"type": "text"
+						},
+						{
+							"key": "capacity",
+							"value": "asasasads",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/bus-station/buses",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"bus-station",
+						"buses"
+					]
+				},
+				"description": "create bus\r\nonly accesible by station operator"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/bus-station/buses",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9|CXml0Ee4raClMRhaMvX4ODERTsHYkFyTi1jgmJrF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/bus-station/buses?search=&search_by=model&order_by=desc",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"bus-station",
+						"buses"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": ""
+						},
+						{
+							"key": "search_by",
+							"value": "model"
+						},
+						{
+							"key": "order_by",
+							"value": "desc"
+						}
+					]
+				},
+				"description": "get busses\r\nonly accesibe by station operators"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/routes?search=33321242&search_by=number&order_by=asc",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/routes?search=33321242&search_by=number&order_by=asc",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"routes"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "33321242"
+						},
+						{
+							"key": "search_by",
+							"value": "number"
+						},
+						{
+							"key": "order_by",
+							"value": "asc"
+						}
+					]
+				},
+				"description": "get routes\r\npublic endpoint"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/routes",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/routes",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/bus-station/time-table",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9|CXml0Ee4raClMRhaMvX4ODERTsHYkFyTi1jgmJrF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "asasasasadsd",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "asasasasasasasdsd",
+							"type": "text"
+						},
+						{
+							"key": "bus_station_id",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/bus-station/time-table",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"bus-station",
+						"time-table"
+					]
+				},
+				"description": "create time table\r\nonly accesible by station operator"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/bus-station/time-table",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				},
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9|CXml0Ee4raClMRhaMvX4ODERTsHYkFyTi1jgmJrF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/bus-station/time-table",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"bus-station",
+						"time-table"
+					]
+				},
+				"description": "get timetables by station id\r\nonly accesible b y station eperators"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/bus-station/trips",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9|CXml0Ee4raClMRhaMvX4ODERTsHYkFyTi1jgmJrF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "time_table_id",
+							"value": "9976756f-e152-41dc-989b-d36d9e0b54c9",
+							"type": "text"
+						},
+						{
+							"key": "bus_id",
+							"value": "99767de0-c986-405c-9ee1-b5a81a8bea7d",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "asasasasa",
+							"type": "text"
+						},
+						{
+							"key": "details",
+							"value": "sasasasasasa",
+							"type": "text"
+						},
+						{
+							"key": "location_id",
+							"value": "99768028-1da9-4502-8fd1-05a7078e59e6",
+							"type": "text"
+						},
+						{
+							"key": "start",
+							"value": "09:30:00",
+							"type": "text"
+						},
+						{
+							"key": "end",
+							"value": "11:30:00",
+							"type": "text"
+						},
+						{
+							"key": "route_id",
+							"value": "99730560-033e-4c20-8e8d-e0a2cdc6dac2",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "12.01",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "pending",
+							"type": "text"
+						},
+						{
+							"key": "from",
+							"value": "9972b2cd-50cb-423c-b29a-b7fbc3c3fcd2",
+							"type": "text"
+						},
+						{
+							"key": "to",
+							"value": "9972b2cc-fcb8-4175-b982-abcae50a87af",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/bus-station/trips",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"bus-station",
+						"trips"
+					]
+				},
+				"description": "create a trip\r\nonly accessible bu stastion operator"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/bus-station/trips?search_by[]=route_id&search_route_id=99730560-033e-4c20-8e8d-e0a2cdc6dac2&search_by[]=bus_id&search_busid=99767d64-406b-4dc0-b1f2-c41ae2151b09",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9|CXml0Ee4raClMRhaMvX4ODERTsHYkFyTi1jgmJrF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/bus-station/trips?search_by[]=route_id&search_route_id=99730560-033e-4c20-8e8d-e0a2cdc6dac2&search_by[]=bus_id&search_busid=99767d64-406b-4dc0-b1f2-c41ae2151b09",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"bus-station",
+						"trips"
+					],
+					"query": [
+						{
+							"key": "search_by[]",
+							"value": "route_id"
+						},
+						{
+							"key": "search_route_id",
+							"value": "99730560-033e-4c20-8e8d-e0a2cdc6dac2"
+						},
+						{
+							"key": "search_by[]",
+							"value": "bus_id"
+						},
+						{
+							"key": "search_busid",
+							"value": "99767d64-406b-4dc0-b1f2-c41ae2151b09"
+						}
+					]
+				},
+				"description": "get trips by station id\r\nthis is only accessible by station operator"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/bus-station/trips/9976a717-9d07-46ba-ad8f-17efff1d89a6",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9|CXml0Ee4raClMRhaMvX4ODERTsHYkFyTi1jgmJrF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/bus-station/trips/9976a717-9d07-46ba-ad8f-17efff1d89a6",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"bus-station",
+						"trips",
+						"9976a717-9d07-46ba-ad8f-17efff1d89a6"
+					]
+				},
+				"description": "view trip\r\nonly accessibl by station operaqtor\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/bus-station/trips/9976a717-9d07-46ba-ad8f-17efff1d89a6",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				},
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9|CXml0Ee4raClMRhaMvX4ODERTsHYkFyTi1jgmJrF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/bus-station/trips/9976a837-b677-454c-8ea0-15fd6928e4a8",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"bus-station",
+						"trips",
+						"9976a837-b677-454c-8ea0-15fd6928e4a8"
+					]
+				},
+				"description": "update trip\r\nonly accessible by station worker"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/bus-station/trips/9976a717-9d07-46ba-ad8f-17efff1d89a6",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9|CXml0Ee4raClMRhaMvX4ODERTsHYkFyTi1jgmJrF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"time_table_id\": \"9976756f-e152-41dc-989b-d36d9e0b54c9\",\r\n    \"bus_id\": \"99767de0-c986-405c-9ee1-b5a81a8bea7d\",\r\n    \"type\": \"asasasajkljlsa\",\r\n    \"details\": \"sasasjkljklkljasasasa\",\r\n    \"location_id\": \"99768028-1da9-4502-8fd1-05a7078e59e6\",\r\n    \"start\": \"09:30:00\",\r\n    \"end\": \"11:30:00\",\r\n    \"route_id\": \"99730560-033e-4c20-8e8d-e0a2cdc6dac2\",\r\n    \"distance\": 12.01,\r\n    \"status\": \"pending\",\r\n    \"from\": \"9972b2cd-50cb-423c-b29a-b7fbc3c3fcd2\",\r\n    \"to\": \"9972b2cc-fcb8-4175-b982-abcae50a87af\",\r\n    \"slug\": \"09-30-00-3\",\r\n    \"day\": \"Wednesday\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/bus-station/trips/9976a837-b677-454c-8ea0-15fd6928e4a8",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"bus-station",
+						"trips",
+						"9976a837-b677-454c-8ea0-15fd6928e4a8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/bus-station/buses-add-driver/99767de0-c986-405c-9ee1-b5a81a8bea7d",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9|CXml0Ee4raClMRhaMvX4ODERTsHYkFyTi1jgmJrF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "driver_id",
+							"value": "99770446-2276-4b1e-9dc0-fc9649f2c0fc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/bus-station/buses-add-driver/99767de0-c986-405c-9ee1-b5a81a8bea7d",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"bus-station",
+						"buses-add-driver",
+						"99767de0-c986-405c-9ee1-b5a81a8bea7d"
+					]
+				},
+				"description": "add driver to bus\r\nonly accessible by station worker"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/driver/trips/?search_busid=9972f190-a972-4d50-bd20-8be3f9e11442&search_from=9972b2cc-fcb8-4175-b982-abcae50a87af",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "16|NgafsdufjGsTkqL4lvpci6aDkZTbcyc4ALyDZ9ua",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/driver/trips/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"driver",
+						"trips",
+						""
+					],
+					"query": [
+						{
+							"key": "search_from",
+							"value": "9972b2cd-50cb-423c-b29a-b7fbc3c3fcd2",
+							"disabled": true
+						},
+						{
+							"key": "search_by[]",
+							"value": "'from'",
+							"disabled": true
+						},
+						{
+							"key": "search_busid",
+							"value": "9972f190-a972-4d50-bd20-8be3f9e11442",
+							"disabled": true
+						},
+						{
+							"key": "search_route_id",
+							"value": "9973055e-ce0a-4fd2-ba2a-3717abcf1ba8",
+							"disabled": true
+						},
+						{
+							"key": "search_from",
+							"value": "9972b2cc-fcb8-4175-b982-abcae50a87af",
+							"disabled": true
+						}
+					]
+				},
+				"description": "search trips driver\r\nonly accessible by driver"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/driver/trips/9978b953-988a-464b-ac17-08aee893ca8e",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "16|NgafsdufjGsTkqL4lvpci6aDkZTbcyc4ALyDZ9ua",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/driver/trips/9978b953-5794-48fd-a817-ef0da0389859",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"driver",
+						"trips",
+						"9978b953-5794-48fd-a817-ef0da0389859"
+					]
+				},
+				"description": "show trip driver\r\nonly accessible by driver"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/driver/trips-location/9978b953-5794-48fd-a817-ef0da0389859",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "16|NgafsdufjGsTkqL4lvpci6aDkZTbcyc4ALyDZ9ua",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "latitude",
+							"value": "-72.35031522",
+							"type": "text"
+						},
+						{
+							"key": "longitude",
+							"value": "86.89053600",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/driver/trips-location/9978b953-5794-48fd-a817-ef0da0389859",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"driver",
+						"trips-location",
+						"9978b953-5794-48fd-a817-ef0da0389859"
+					]
+				},
+				"description": "Update Location Of A Trip\r\nOnly accessibe by Driver"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/driver/trips-status/9978b953-5794-48fd-a817-ef0da0389859?status=asasasasassasasasasaaaas",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "16|NgafsdufjGsTkqL4lvpci6aDkZTbcyc4ALyDZ9ua",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/driver/trips-status/9978b953-5794-48fd-a817-ef0da0389859?status=asasasasassasasasasaaaas",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"driver",
+						"trips-status",
+						"9978b953-5794-48fd-a817-ef0da0389859"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "asasasasassasasasasaaaas"
+						}
+					]
+				},
+				"description": "Update trip status\r\nOnly acessible by Drivers"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/Threads-create-show/99782df7-4eb6-4938-9187-dc151e2d03fe",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "18|EdyPTrLuANeyLsXzuyGGKV2qt0nY2zsH0CxbvRLF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/Threads-create-show/99782df7-4eb6-4938-9187-dc151e2d03fe",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"Threads-create-show",
+						"99782df7-4eb6-4938-9187-dc151e2d03fe"
+					]
+				},
+				"description": "Creeate or view thread\r\nAccessible to all authenticated users"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/messages/",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "18|EdyPTrLuANeyLsXzuyGGKV2qt0nY2zsH0CxbvRLF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "thread_id",
+							"value": "999c7ca4-0799-49ca-b78b-98c415cc9ac4",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "asasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaaasasasasasasasaa",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/messages/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"messages",
+						""
+					]
+				},
+				"description": "store message\r\naccessible by all authemnticated users but needs to be a member of the thread"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/v1/messages/999c7d34-e547-4684-bde7-10fecab29820",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "18|EdyPTrLuANeyLsXzuyGGKV2qt0nY2zsH0CxbvRLF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "message",
+							"value": "asassasasasa",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "read_at",
+							"value": "2023-05-22 14:30:00",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/messages/999c7d34-e547-4684-bde7-10fecab29820",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"messages",
+						"999c7d34-e547-4684-bde7-10fecab29820"
+					]
+				},
+				"description": "update message\r\nonly accessible b y the user who sends the message"
+			},
+			"response": []
+		}
+	]
+}
