@@ -3,6 +3,7 @@
 //use App\Http\Controllers\Api\StationOperator\BusController;
 use App\Http\Controllers\Api\V1\Admin\UserController;
 use App\Http\Controllers\Api\V1\AuthController;
+use App\Http\Controllers\Api\V1\BookingController;
 use App\Http\Controllers\Api\V1\Driver\TripsController;
 use App\Http\Controllers\Api\V1\MessageController;
 use App\Http\Controllers\Api\V1\RouteController;
@@ -41,6 +42,7 @@ Route::prefix('v1')->group(function () {
         Route::apiResource('Threads',ThreadController::class);
         Route::post('Threads-create-show/{user}',[ThreadController::class,'create_show']);
         Route::apiResource('messages',MessageController::class);
+        Route::apiResource('booking',BookingController::class);
     });
 
     Route::prefix('super-admin')->middleware(['auth:sanctum','role:administrator'])->group(function () {
