@@ -21,7 +21,7 @@ class TripController extends Controller
         $user = $request->user();
         $drivers = Trip::whereHas('BusStation.User', function ($query) use ($user) {
             $query->where('id', $user->id);
-        })
+        })->with('Booking')
         ->orWhere('from',$user->BusStation->id)
         ->orWhere('to',$user->BusStation->id)
         ->when($request->search && in_array('trip_id', $request->search_by), function ($query) use ($request) {

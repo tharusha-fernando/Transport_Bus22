@@ -27,7 +27,7 @@ class TripsController extends Controller
         //return $user->BusStation;
         $drivers = Trip::whereHas('Bus.Driver', function ($query) use ($driver) {
             $query->where('id', $driver);
-        })
+        })->with('Booking')
             ->when($request->search, function ($query) use ($request) {
                 $query->where('id', 'like', '%' . $request->search . '%');
             })
