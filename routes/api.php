@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\BookingController;
 use App\Http\Controllers\Api\V1\Driver\TripsController;
 use App\Http\Controllers\Api\V1\MessageController;
+use App\Http\Controllers\Api\V1\Reg_user\TripController as Reg_userTripController;
 use App\Http\Controllers\Api\V1\RouteController;
 use App\Http\Controllers\Api\V1\StationOperator\BusController;
 use App\Http\Controllers\Api\V1\StationOperator\DriverController;
@@ -69,7 +70,7 @@ Route::prefix('v1')->group(function () {
         Route::patch('trips-location/{trip}',[TripsController::class,'SetLocation']);
     });
     Route::prefix('reg-user')->middleware('auth:sanctum')->group(function () {
-        
+        Route::apiResource('trips',Reg_userTripController::class);
     });
 });
 
