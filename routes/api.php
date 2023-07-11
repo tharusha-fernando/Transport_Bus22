@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\V1\BookingController;
 use App\Http\Controllers\Api\V1\Driver\TripsController;
 use App\Http\Controllers\Api\V1\MessageController;
 use App\Http\Controllers\Api\V1\Reg_user\TripController as Reg_userTripController;
+use App\Http\Controllers\Api\V1\ReviewsController;
 use App\Http\Controllers\Api\V1\RouteController;
 use App\Http\Controllers\Api\V1\StationOperator\BusController;
 use App\Http\Controllers\Api\V1\StationOperator\DriverController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\Api\V1\StationOperator\TimeTableController;
 use App\Http\Controllers\Api\V1\StationOperator\TripController;
 use App\Http\Controllers\Api\V1\ThreadController;
 use App\Http\Controllers\Api\V1\UserController as V1UserController;
+use App\Models\Reviews;
 use App\Models\Thread;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +39,8 @@ Route::prefix('v1')->group(function () {
 
     Route::post('login',[AuthController::class,'login']);
     Route::post('regester-user',[V1UserController::class,'storeRegularuserAccount']);
+
+    Route::apiResource('reviews',ReviewsController::class);
 
     Route::apiResource('routes',RouteController::class);
     Route::middleware(['auth:sanctum'])->group(function(){
@@ -71,6 +75,7 @@ Route::prefix('v1')->group(function () {
     });
     Route::prefix('reg-user')->middleware('auth:sanctum')->group(function () {
         Route::apiResource('trips',Reg_userTripController::class);
+
     });
 });
 
