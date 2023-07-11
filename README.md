@@ -47,6 +47,10 @@ To set up the project, follow these steps:
     ```bash
    php artisan serve
 
+6. Run Seeder
+   ```bash
+   php artisan db:seed  
+
 
 
 The API will be accessible at http://localhost:8000.
@@ -54,6 +58,8 @@ The API will be accessible at http://localhost:8000.
 Postman Collection
 Inside the public/postman directory, you will find a Postman collection that contains pre-defined API requests. You can import this collection into Postman to easily test and interact with the API.
 This projects currently uses Sanctum Authentication
+
+
 Api Documentation - https://documenter.getpostman.com/view/25224915/2s946bDvXN
 
 css
