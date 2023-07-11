@@ -47,6 +47,10 @@ To set up the project, follow these steps:
     ```bash
    php artisan serve
 
+6. Run Seeder
+   ```bash
+   php artisan db:seed  
+
 
 
 The API will be accessible at http://localhost:8000.
